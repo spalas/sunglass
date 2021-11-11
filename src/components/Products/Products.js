@@ -1,48 +1,20 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Grid from '@mui/material/Grid';
 
 import { Container, Typography } from '@mui/material';
 import Product from './Product/Product';
-const products = [
-    {
-        name: "Man Sunglass",
-        price: "90 $",
-        descripation: "All type of sunglass available here but we more collection then other all band you find here",
-        image: "https://i.ibb.co/Cz0n4hQ/sun66.png"
-    },
-    {
-        name: "Woman Sunglass",
-        price: "100 $",
-        descripation: "Woman sunglass available here but we more collection then other all band you find here",
-        image: "https://i.ibb.co/5F9LzvR/sun64.png"
-    },
-    {
-        name: "Kid sunglass",
-        price: "50 $",
-        descripation: "Kids for sunglass available here but we more collection then other all band you find here",
-        image: "https://i.ibb.co/M9hdK0p/sun61.png"
-    },
-    {
-        name: "Photo flash sunglass",
-        price: "115 $",
-        descripation: "photoFlash sunglass available here but we more collection then other all band you find here",
-        image: "https://i.ibb.co/ctD1v9x/sun65.png"
-    },
-    {
-        name: "glow sunglass",
-        price: "125 $",
-        descripation: "Glow sunglass available here but we more collection then other all band you find here",
-        image: "https://i.ibb.co/k8zKYjf/sun63.png"
-    },
-    {
-        name: "Style sunglass",
-        price: "100 $",
-        descripation: "Stylize  you can find here sunglass available here but we more collection then other all band you find here",
-        image: "https://i.ibb.co/Trkw9rj/sun62.png"
-    },
-]
+
 
 const Products = () => {
+
+    const [items, setItems] = useState([])
+
+    useEffect(() => {
+        fetch('http://localhost:5000/allitems')
+            .then(res => res.json())
+            .then(data => setItems(data))
+    }, [])
+    console.log(items)
 
 
 
@@ -60,9 +32,9 @@ const Products = () => {
             <Grid container spacing={2}>
 
                 {
-                    products.map(product => <Product
-                        key={product.name}
-                        product={product}
+                    items?.map(item => <Product
+                        key={item._id}
+                        item={item}
 
 
                     ></Product>)

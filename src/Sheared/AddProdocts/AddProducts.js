@@ -4,7 +4,23 @@ import './AddProducts.css'
 
 const AddProducts = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
-    const onSubmit = data => console.log(data);
+    // const onSubmit = data => console.log(data);
+    const onSubmit = (data) => {
+        fetch("http://localhost:5000/additems", {
+            method: "POST",
+            headers: { "content-type": "application/json" },
+            body: JSON.stringify(data),
+        })
+            .then((res) => res.json())
+            .then((result) => console.log(result));
+        console.log(data);
+    };
+
+
+
+
+
+
 
     return (
         <div>

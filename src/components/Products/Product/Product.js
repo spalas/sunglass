@@ -1,9 +1,10 @@
 import React from 'react';
 import { Button, Card, CardActions, CardContent, CardMedia, Grid, Typography } from '@mui/material';
 
-const Product = ({ product }) => {
+const Product = ({ item }) => {
 
-    const { name, price, descripation, image, } = product
+
+    const { name, price, description, image } = item
 
     return (
 
@@ -26,7 +27,7 @@ const Product = ({ product }) => {
                         Price :  {price}
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
-                        {descripation}
+                        {description}
                     </Typography>
                 </CardContent>
                 <CardActions>
