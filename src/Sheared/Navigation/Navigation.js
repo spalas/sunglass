@@ -35,6 +35,14 @@ const Navigation = () => {
                         <Button sx={{ textDecoration: 'none' }} color="inherit">Explore</Button>
 
                     </Link>
+                    <Link to="/addProducts">
+                        <Button sx={{ textDecoration: 'node' }} color="inherit">AddService</Button>
+
+                    </Link>
+                    <NavLink to="dashboard">
+                        <Button xs={{ textDecoration: 'none' }} color="inherit">Dashboard</Button>
+
+                    </NavLink>
                     {
                         user?.email ?
                             <Button onClick={logOut} color="inherit">Logout</Button>

@@ -10,6 +10,7 @@ import Home from './components/Home/Home';
 import AuthProvider from './context/AuthProvider/AuthProvider';
 import Register from './components/Login/Register/Register';
 import Login from './components/Login/Login/Login';
+import AddProducts from './Sheared/AddProdocts/AddProducts';
 
 
 function App() {
@@ -23,6 +24,9 @@ function App() {
             </Route>
             <Route path="/home">
               <Home />
+            </Route>
+            <Route path="/addproducts">
+              <AddProducts />
             </Route>
             <Route path="/login">
               <Login
