@@ -31,25 +31,33 @@ const Navigation = () => {
                     <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
                         Two star sunglass
                     </Typography>
-                    <Link to="/products">
-                        <Button sx={{ textDecoration: 'none' }} color="inherit">Explore</Button>
+                    <Link style={{ textDecoration: 'none' }} to="/products">
+                        <Button color="inherit">Explore</Button>
 
                     </Link>
-                    <Link to="/addProducts">
-                        <Button sx={{ textDecoration: 'node' }} color="inherit">AddService</Button>
+                    <Link style={{ textDecoration: 'none' }} to="/addProducts">
+                        <Button color="inherit">AddService</Button>
 
                     </Link>
-                    <NavLink to="dashboard">
-                        <Button xs={{ textDecoration: 'none' }} color="inherit">Dashboard</Button>
 
-                    </NavLink>
                     {
                         user?.email ?
-                            <Button onClick={logOut} color="inherit">Logout</Button>
-                            :
-                            <NavLink to="/login">
+                            <Box>
+                                <NavLink style={{ textDecoration: 'none' }} to="dashboard" >
+                                    <Button color="inherit">Dashboard</Button>
 
-                                <Button style={{ textDecoration: 'none' }} color="inherit">Login</Button>
+                                </NavLink>
+
+                                <Button onClick={logOut} color="inherit">Logout</Button>
+                            </Box>
+
+
+
+
+                            :
+                            <NavLink style={{ textDecoration: 'none' }} to="/login">
+
+                                <Button color="inherit">Login</Button>
 
                             </NavLink>
 

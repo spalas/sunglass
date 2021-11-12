@@ -1,10 +1,11 @@
 import React from 'react';
-import { Button, Card, CardActions, CardContent, CardMedia, Grid, Typography } from '@mui/material';
+import { Button, Card, CardActions, CardContent, CardMedia, Grid, Link, Typography } from '@mui/material';
+import { NavLink } from 'react-router-dom';
 
 const Product = ({ item }) => {
 
 
-    const { name, price, description, image } = item
+    const { _id, name, price, description, image } = item
 
     return (
 
@@ -31,7 +32,10 @@ const Product = ({ item }) => {
                     </Typography>
                 </CardContent>
                 <CardActions>
-                    <Button variant="contained">Buy Now</Button>
+                    <NavLink style={{ textDecoration: "none" }} to={`/buying/${_id}`}>
+                        <Button variant="contained">Buy Now</Button>
+                    </NavLink>
+
 
                 </CardActions>
             </Card>
