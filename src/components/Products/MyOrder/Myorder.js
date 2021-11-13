@@ -16,7 +16,8 @@ const Myorder = () => {
 
     return (
         <div>
-            my oorder
+            <h1>My Booking</h1>
+
         </div>
     );
 };

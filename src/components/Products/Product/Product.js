@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Card, CardActions, CardContent, CardMedia, Grid, Link, Typography } from '@mui/material';
+import { Button, Card, CardActions, CardContent, CardMedia, Grid, Typography } from '@mui/material';
 import { NavLink } from 'react-router-dom';
 
 const Product = ({ item }) => {

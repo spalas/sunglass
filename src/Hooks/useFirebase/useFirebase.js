@@ -32,7 +32,14 @@ const useFirebase = () => {
 
 
                 setUser(newUser);
+
+
+
+                handleNameEmail(email, name)
                 //  send name to firebase after creation
+
+
+
                 updateProfile(auth.currentUser, {
                     displayName: name
                 }).then(() => {
@@ -111,6 +118,41 @@ const useFirebase = () => {
         return () => unsubscribe;
 
     }, [])
+
+
+
+    const handleNameEmail = (email, displayName) => {
+
+        const user = { email, displayName };
+
+        fetch('https://fast-gorge-58002.herokuapp.com/users', {
+            method: "POST",
+            headers: {
+                "content-type": "application/json"
+            },
+            body: JSON.stringify(user)
+
+
+        })
+            .then()
+
+
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     // handle logout function
 

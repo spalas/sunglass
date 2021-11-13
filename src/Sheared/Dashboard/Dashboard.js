@@ -20,6 +20,7 @@ import { Route, Switch, useRouteMatch } from 'react-router';
 import { NavLink } from 'react-router-dom';
 import Review from '../../components/Review/Review';
 import Myorder from '../../components/Products/MyOrder/Myorder'
+import MakeAdmin from '../MakeAdmin/MakeAdmin';
 
 const drawerWidth = 200;
 
@@ -38,13 +39,19 @@ function Dashboard(props) {
             <Divider />
             <List>
                 <NavLink to={`${url}`}>
-                    <li className="dashboard-menu mt-5">Book</li>
+                    <li>Book</li>
                 </NavLink>
 
 
-                <NavLink to={`${url}/review`}>Review</NavLink>
 
 
+                <NavLink to={`${url}/review`}>
+                    <li> Review</li>
+
+                </NavLink>
+
+
+                <NavLink to={`${url}/admin`}>Admin</NavLink>
             </List>
             <List>
                 {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
@@ -143,6 +150,9 @@ function Dashboard(props) {
                                 </Route>
                                 <Route exact path={`${path}/review`}>
                                     <Review></Review>
+                                </Route>
+                                <Route exact path={`${path}/admin`}>
+                                    <MakeAdmin></MakeAdmin>
                                 </Route>
                             </Switch>
 

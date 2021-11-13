@@ -26,7 +26,7 @@ const Buying = () => {
     const onSubmit = (data) => {
         data.email = user?.email;
         data.status = "pending";
-        fetch("http://localhost:5000/addOrders", {
+        fetch("https://fast-gorge-58002.herokuapp.com/addOrders", {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(data),
@@ -37,7 +37,7 @@ const Buying = () => {
     };
 
     useEffect(() => {
-        fetch(`https://fast-gorge-58002.herokuapp.com/${buyingId}`)
+        fetch(`https://fast-gorge-58002.herokuapp.com/singleItem/${buyingId}`)
             .then(res => res.json())
             .then(data => setItem(data))
     }, [])

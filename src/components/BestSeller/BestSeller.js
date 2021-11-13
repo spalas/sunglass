@@ -8,7 +8,7 @@ import { Box } from '@mui/system';
 const BestSeller = () => {
     return (
         <Container sx={{ flexGrow: 1 }}>
-            <Grid container spacing={2}>
+            <Grid container spacing={2} sx={{ mt: 5 }}>
 
                 <Grid item xs={12} md={6} >
                     <img style={{ width: '100%' }} src={bestseller} alt="" />
