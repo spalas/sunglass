@@ -16,12 +16,17 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import { Grid } from '@mui/material';
+import { Route, Switch, useRouteMatch } from 'react-router';
+import { NavLink } from 'react-router-dom';
+import Review from '../../components/Review/Review';
+import Myorder from '../../components/Products/MyOrder/Myorder'
 
 const drawerWidth = 200;
 
 function Dashboard(props) {
     const { window } = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
+    let { path, url } = useRouteMatch()
 
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen);
@@ -32,6 +37,16 @@ function Dashboard(props) {
             <Toolbar />
             <Divider />
             <List>
+                <NavLink to={`${url}`}>
+                    <li className="dashboard-menu mt-5">Book</li>
+                </NavLink>
+
+
+                <NavLink to={`${url}/review`}>Review</NavLink>
+
+
+            </List>
+            <List>
                 {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
                     <ListItem button key={text}>
                         <ListItemIcon>
@@ -41,6 +56,12 @@ function Dashboard(props) {
                     </ListItem>
                 ))}
             </List>
+
+
+
+
+
+
 
 
         </div>
@@ -114,6 +135,17 @@ function Dashboard(props) {
 
                     <Grid container spacing={2}>
                         <Grid item xs={8}>
+
+                            <Switch>
+                                <Route exact path={path}>
+                                    <Myorder></Myorder>
+
+                                </Route>
+                                <Route exact path={`${path}/review`}>
+                                    <Review></Review>
+                                </Route>
+                            </Switch>
+
 
                         </Grid>
                         <Grid item xs={4}>
