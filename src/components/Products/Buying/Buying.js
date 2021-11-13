@@ -37,7 +37,7 @@ const Buying = () => {
     };
 
     useEffect(() => {
-        fetch(`http://localhost:5000/singleItem/${buyingId}`)
+        fetch(`https://fast-gorge-58002.herokuapp.com/${buyingId}`)
             .then(res => res.json())
             .then(data => setItem(data))
     }, [])

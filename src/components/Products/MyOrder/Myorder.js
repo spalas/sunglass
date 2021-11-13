@@ -6,7 +6,7 @@ const Myorder = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/myOrder/${user?.email}`)
+        fetch(`https://fast-gorge-58002.herokuapp.com/${user?.email}`)
             .then(res => res.json())
             .then(data => console.log(data))
 

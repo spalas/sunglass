@@ -6,7 +6,7 @@ const AddProducts = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     // const onSubmit = data => console.log(data);
     const onSubmit = (data) => {
-        fetch("http://localhost:5000/additems", {
+        fetch("https://fast-gorge-58002.herokuapp.com/additems", {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(data),

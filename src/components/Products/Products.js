@@ -10,7 +10,7 @@ const Products = () => {
     const [items, setItems] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:5000/allitems')
+        fetch('https://fast-gorge-58002.herokuapp.com/allitems')
             .then(res => res.json())
             .then(data => setItems(data))
     }, [])
