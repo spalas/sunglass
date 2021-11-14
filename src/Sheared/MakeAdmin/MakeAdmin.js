@@ -1,17 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
 
 const MakeAdmin = () => {
+
+    const [email, setEmail] = useState('')
+
+
     const { register, handleSubmit, } = useForm();
     const onSubmit = (data) => {
-        fetch("https://fast-gorge-58002.herokuapp.com/makeAdmin", {
+        const user = { email }
+        fetch("http://localhost:5000/users/makeAdmin", {
             method: "PUT",
             headers: { "content-type": "application/json" },
-            body: JSON.stringify(data),
+            body: JSON.stringify(user),
         })
             .then((res) => res.json())
             .then((result) => console.log(result));
-
         console.log(data);
 
     }

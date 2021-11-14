@@ -21,6 +21,8 @@ import { NavLink } from 'react-router-dom';
 import Review from '../../components/Review/Review';
 import Myorder from '../../components/Products/MyOrder/Myorder'
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
+import PayMent from '../PayMent/PayMent';
+import MangeAllProduct from '../MangeAllProduct/MangeAllProduct';
 
 const drawerWidth = 200;
 
@@ -38,20 +40,40 @@ function Dashboard(props) {
             <Toolbar />
             <Divider />
             <List>
-                <NavLink to={`${url}`}>
+                <NavLink style={{ textDecoration: 'none' }} to={`${url}`}>
                     <li>Book</li>
                 </NavLink>
+                <br />
 
-
-
-
-                <NavLink to={`${url}/review`}>
+                <NavLink style={{ textDecoration: 'none' }} to={`${url}/review`}>
                     <li> Review</li>
 
                 </NavLink>
+                <br />
+                <NavLink style={{ textDecoration: 'none' }} to={`${url}/payment`}>
+                    <li> PayMent</li>
+                </NavLink>
+                <br />
+                <NavLink style={{ textDecoration: 'none' }} to={`${url}/admin`}>
+                    Admin
+                </NavLink>
+                <br />
+                <NavLink style={{ textDecoration: 'none' }} to={`${url}/mangeAllOreder`}>
+                    Mange All Order
+                </NavLink>
+                <br />
+                <NavLink style={{ textDecoration: 'none' }} to={`${url}/addAproduct`}>
+                    Add a product
+                </NavLink>
+                <br />
+                <NavLink style={{ textDecoration: 'none' }} to={`${url}/mangeProduct`}>
+                    Mange product
+                </NavLink>
+                <br />
+                <NavLink style={{ textDecoration: 'none' }} to={`${url}/logout`}>
+                    Logout
+                </NavLink>
 
-
-                <NavLink to={`${url}/admin`}>Admin</NavLink>
             </List>
             <List>
                 {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
@@ -150,6 +172,21 @@ function Dashboard(props) {
                                 </Route>
                                 <Route exact path={`${path}/review`}>
                                     <Review></Review>
+                                </Route>
+                                <Route exact path={`${path}/payment`}>
+                                    <PayMent></PayMent>
+                                </Route>
+                                <Route exact path={`${path}/admin`}>
+                                    <MakeAdmin></MakeAdmin>
+                                </Route>
+                                <Route exact path={`${path}/mangeallproduct`}>
+                                    <MangeAllProduct></MangeAllProduct>
+                                </Route>
+                                <Route exact path={`${path}/admin`}>
+                                    <MakeAdmin></MakeAdmin>
+                                </Route>
+                                <Route exact path={`${path}/admin`}>
+                                    <MakeAdmin></MakeAdmin>
                                 </Route>
                                 <Route exact path={`${path}/admin`}>
                                     <MakeAdmin></MakeAdmin>

@@ -5,6 +5,7 @@ import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 import Products from '../Products/Products';
 import Review from '../Review/Review';
+import Explore from './Explore/Explore';
 
 
 const Home = () => {
@@ -13,6 +14,7 @@ const Home = () => {
             <Header></Header>
             <Products></Products>
             <Review></Review>
+
             <BestSeller></BestSeller>
             <Blogs></Blogs>
             <Footer></Footer>

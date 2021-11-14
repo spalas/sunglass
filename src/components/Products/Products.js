@@ -12,7 +12,7 @@ const Products = () => {
     useEffect(() => {
         fetch('https://fast-gorge-58002.herokuapp.com/allitems')
             .then(res => res.json())
-            .then(data => setItems(data))
+            .then(data => setItems(data.slice(0, 6)))
     }, [])
     console.log(items)
 

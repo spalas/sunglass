@@ -15,6 +15,8 @@ import Buying from './components/Products/Buying/Buying';
 import PrivateRoute from './components/Login/PrivateRoute/PrivateRoute';
 import Dashboard from './Sheared/Dashboard/Dashboard';
 import Myorder from './components/Products/MyOrder/Myorder';
+import Explore from './Sheared/Explore/Explore';
+import PayMent from './Sheared/PayMent/PayMent';
 
 
 
@@ -30,11 +32,19 @@ function App() {
             <Route path="/home">
               <Home />
             </Route>
-            <Route path="/myOrder">
-              <Myorder />
+            <Route path="/explore">
+              <Explore />
             </Route>
+            <Route path="/payment">
+              <PayMent />
+            </Route>
+
             <PrivateRoute path="/addproducts">
               <AddProducts />
+
+            </PrivateRoute>
+            <PrivateRoute path="/myorder">
+              <Myorder />
 
             </PrivateRoute>
             <PrivateRoute path="/dashboard">
@@ -46,9 +56,9 @@ function App() {
 
 
 
-            <Route path="/buying/:buyingId">
+            <PrivateRoute path="/buying/:buyingId">
               <Buying />
-            </Route>
+            </PrivateRoute>
             <Route path="/login">
               <Login
               />

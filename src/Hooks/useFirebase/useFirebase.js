@@ -16,10 +16,6 @@ const useFirebase = () => {
     const [authError, setAuthError] = useState('');
     const auth = getAuth();
 
-
-
-
-
     const googleProvider = new GoogleAuthProvider();
 
     // handle register function
@@ -33,12 +29,8 @@ const useFirebase = () => {
 
                 setUser(newUser);
 
-
-
-                handleNameEmail(email, name)
                 //  send name to firebase after creation
-
-
+                handleNameEmail(email, name, 'POST')
 
                 updateProfile(auth.currentUser, {
                     displayName: name
@@ -88,8 +80,8 @@ const useFirebase = () => {
             .then((result) => {
 
                 const user = result.user;
+                handleNameEmail(user?.email, user?.displayName, 'PUT');
                 setAuthError('');
-
             }).catch((error) => {
                 setAuthError(error.message);
 
@@ -121,12 +113,11 @@ const useFirebase = () => {
 
 
 
-    const handleNameEmail = (email, displayName) => {
+    const handleNameEmail = (email, displayName, method) => {
 
         const user = { email, displayName };
-
         fetch('https://fast-gorge-58002.herokuapp.com/users', {
-            method: "POST",
+            method: "method",
             headers: {
                 "content-type": "application/json"
             },
@@ -135,6 +126,7 @@ const useFirebase = () => {
 
         })
             .then()
+
 
 
 

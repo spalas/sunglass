@@ -31,18 +31,19 @@ const Navigation = () => {
                     <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
                         Two star sunglass
                     </Typography>
-                    <Link style={{ textDecoration: 'none' }} to="/products">
+                    <Link style={{ textDecoration: 'none' }} to="/explore">
                         <Button color="inherit">Explore</Button>
 
                     </Link>
-                    <Link style={{ textDecoration: 'none' }} to="/addProducts">
-                        <Button color="inherit">AddService</Button>
 
-                    </Link>
 
                     {
                         user?.email ?
                             <Box>
+                                <Link style={{ textDecoration: 'none' }} to="/addProducts">
+                                    <Button color="inherit">AddService</Button>
+
+                                </Link>
                                 <NavLink style={{ textDecoration: 'none' }} to="dashboard" >
                                     <Button color="inherit">Dashboard</Button>
 
